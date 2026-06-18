@@ -8,6 +8,8 @@
 
 ## 2.1 Der Power Query Editor – Orientierung
 
+![Power Query](../assets/screenshots/04 Power Query.png)
+
 Vier Bereiche: **Abfragen** (links) · **Datenvorschau** (Mitte) ·
 **Angewendete Schritte** (rechts) · **Bearbeitungsleiste** (M-Code des Schritts).
 
@@ -34,6 +36,9 @@ gefährlich für schmutziges**.
 
     **Erst putzen, dann typisieren.** Ein Datentyp ist ein Versprechen – brechen Sie
     es nicht, indem Sie es zu früh geben (ein Leerzeichen kippt die Spalte zu `Error`).
+
+
+![Spalte bearbeiten](../assets/screenshots/05 Spalte bearbeiten in Power Query.png)
 
 ## 2.3 Gemeinsam (Velora): Bestellungen bereinigen
 
@@ -116,6 +121,8 @@ Dezimalzahl. *(Ob das besser ein DAX-Measure ist, klären wir in Kapitel 3.)*
 
 ## 2.4 Stammdaten putzen: das Kategorie-Chaos
 
+
+
 In **Produkte** enthält `Kategorie`: `Zubehör`, `zubehör ` (Leerzeichen), `ZUBEHÖR`,
 `fahrrad`. Im Bericht ergäbe das **vier „Kategorien"** statt zwei. Elegante Lösung in
 zwei Schritten:
@@ -136,6 +143,9 @@ zwei Schritten:
     nachvollziehbar* statt in 20 verschachtelten „Werte ersetzen"-Schritten zu versauern.
 
 ## 2.5 Spalten umformen – das Werkzeug-Sortiment
+![Spalte trennen nach Trennzeichen](../assets/screenshots/06 Spalte trennen nach Trennzeichen.png)
+
+![Spalte teilen Optionen](../assets/screenshots/07 Spalte teilen Optionen.png)
 
 | Aufgabe | Werkzeug |
 |---|---|
@@ -145,6 +155,8 @@ zwei Schritten:
 | Rechnen / M-Logik | **Benutzerdefinierte Spalte** |
 | „Mach es wie hier" | **Spalte aus Beispielen** |
 | Text säubern | Format → **Kürzen, Bereinigen, Groß/Klein** |
+
+![Power Query M](../assets/screenshots/08 Power Query M.png)
 
 !!! merksatz "Merksatz"
 

@@ -19,6 +19,8 @@
 
 ## 0.2 Was ist Power BI? (in Controlling-Sprache)
 
+![Power BI Startbildschirm](../assets/screenshots/01 Startbildschirm.png)
+
 Power BI macht **aus Rohdaten belastbare Auswertungen** – ohne jeden Monat Excel
 zusammenzukopieren. Drei Bausteine sind für uns wichtig:
 

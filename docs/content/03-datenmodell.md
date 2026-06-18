@@ -19,6 +19,12 @@ eine Beziehung).
 
 ## 3.2 Das Sternschema (Star Schema)
 
+![Modellansicht](../assets/screenshots/30 Modellansicht.png)
+
+![Datenmodell neue Beziehung](../assets/screenshots/31 Datenmodell Neue Beziehung.png)
+
+![Datenmodell nach neuer Beziehung](../assets/screenshots/32 Datenmodell nach neuer Beziehung.png)
+
 ```mermaid
 flowchart TD
     P["Dim Produkt"]

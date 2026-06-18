@@ -19,6 +19,8 @@
     Für eine **einzelne** Datei „Datei", für **viele gleichartige** Dateien immer
     „Ordner". Wer 12 Monatsdateien einzeln einliest, hat schon verloren.
 
+![Vorschau Daten laden](../assets/screenshots/02 Vorschau Daten laden.png)
+
 ## 1.2 Die wichtigste Weiche: der Verbindungsmodus
 
 | Modus | Was passiert | Wann nutzen |
@@ -44,6 +46,8 @@ Für **beide Schulungs-Datensätze** nutzen wir **Import**.
     unsere CSV-Welt brauchen wir das nicht.
 
 ## 1.3 Gemeinsam (Velora): Bestellungen aus dem Ordner einlesen
+
+![Tabelletools](../assets/screenshots/03 Tabellentools.png)
 
 !!! gemeinsam "Mitmachen am Rechner"
 
@@ -93,6 +97,9 @@ Beim CSV-Import zeigt Power BI oben drei Felder: **Codierung**, **Trennzeichen**
     `2.296,72` ist deutsch *zweitausend…*, englisch *zwei Komma drei*.
 
 ### Datentyp „mit Gebietsschema" setzen
+
+
+![Datentypen](../assets/screenshots/09 Datentypen.png)
 
 Bei kritischen Spalten: **Rechtsklick → Typ ändern → Mit Gebietsschema… →
 „Deutsch (Deutschland)"**. So werden `2.296,72` und `28.06.2023` korrekt
