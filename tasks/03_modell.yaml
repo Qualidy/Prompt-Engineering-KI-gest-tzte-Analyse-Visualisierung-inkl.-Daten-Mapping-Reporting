@@ -1,0 +1,22 @@
+title: Bürotech-Sternschema & Kalender
+difficulty: 2
+question: |
+  Bauen Sie aus den bereinigten Bürotech-Tabellen ein **Sternschema**:
+
+  1. Beziehungen `Auftraege[ArtikelNr] → Artikel[ArtikelNr]` und
+     `Auftraege[KundenNr] → Kunden[KundenNr]` anlegen (1:n, **einfach gerichtet**).
+  2. Eine **Datumstabelle** (2023) erzeugen, **als Datumstabelle markieren**,
+     `Monatsname` **nach Monatsnummer sortieren**, mit `Auftraege[Datum]` verbinden.
+  3. Den entpivotierten Plan über **Warengruppe + Monat** auswertbar machen
+     (Monat-Text `Jan→1 …` auf eine Monatsnummer mappen).
+tip: |
+  Prüfen Sie in der Modellansicht: Geht von **jeder** Dimension genau **ein** Pfeil
+  in die Faktentabelle? Ohne „Als Datumstabelle markieren" funktioniert später keine
+  saubere Zeitrechnung.
+solution: |
+  - Beziehungen per Drag&Drop; Kardinalität **1:n**, Richtung **einfach**.
+  - Datumstabelle: `CALENDARAUTO()` **oder** in Power Query via `List.Dates`.
+    Dann **Tabellentools → Als Datumstabelle markieren** und
+    **Spaltentools → Nach Spalte sortieren → Monatsnummer**.
+  - Plan: bedingte/Mapping-Spalte `Monat → Monatsnummer`, dann ist „Plan vs. Ist je
+    Monat" möglich (Plan auf Monats-, Aufträge auf Tagesebene – Treffpunkt ist der Monat).

@@ -1,0 +1,31 @@
+title: Bürotech-Kennzahlen & „Unbekannt"-Zeile
+difficulty: 3
+question: |
+  Legen Sie die **Kern-Measures** an und sichern Sie den Umsatz der Zeile mit
+  fehlender ArtikelNr:
+
+  1. `Umsatz`, `Einkaufswert` (über `RELATED` aus `Artikel`), `Deckungsbeitrag`,
+     `DB-Marge %`.
+  2. `Planumsatz`, `Abweichung`, `Zielerreichung %`.
+  3. **Profi:** Ergänzen Sie in `Artikel` eine **„Unbekannt"-Zeile** und mappen Sie
+     die Auftragszeile mit fehlender ArtikelNr darauf, damit ihr Umsatz **nicht
+     verloren** geht.
+tip: |
+  Sammeln Sie Measures in einer eigenen Tabelle `_Kennzahlen`. Nutzen Sie `DIVIDE`
+  statt „/", damit eine Division durch 0 nicht knallt. Die „Unbekannt"-Zeile hängen
+  Sie per **Anfügen** an die Dimension.
+solution: |
+  ```dax
+  Umsatz = SUMX ( Auftraege, Auftraege[Menge] * Auftraege[Listenpreis] * (1 - Auftraege[Rabatt]) )
+  Einkaufswert = SUMX ( Auftraege, Auftraege[Menge] * RELATED ( Artikel[Einkaufspreis] ) )
+  Deckungsbeitrag = [Umsatz] - [Einkaufswert]
+  DB-Marge % = DIVIDE ( [Deckungsbeitrag], [Umsatz] )
+  Planumsatz = SUM ( Umsatzplan[Planumsatz] )
+  Abweichung = [Umsatz] - [Planumsatz]
+  Zielerreichung % = DIVIDE ( [Umsatz], [Planumsatz] )
+  ```
+
+  **„Unbekannt"-Zeile:** in `Artikel` eine Zeile
+  `ArtikelNr = "Unbekannt"`, `Warengruppe = "Unbekannt"` anhängen und in `Auftraege`
+  die leere `ArtikelNr` durch `"Unbekannt"` ersetzen. Jetzt greift der Join und der
+  Umsatz bleibt sichtbar.

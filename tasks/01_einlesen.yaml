@@ -1,0 +1,26 @@
+title: Bürotech-Aufträge einlesen
+difficulty: 1
+question: |
+  Lesen Sie den **Übungs-Datensatz Bürotech** ein – analog zur Velora-Demo:
+
+  1. Lesen Sie die vier `Auftraege_Q*.csv` über **„Aus Ordner"** ein.
+  2. **Filtern Sie zuerst** die Spalte `Name` auf „beginnt mit `Auftraege`", damit
+     `Artikel.csv`, `Kunden.csv` und `Umsatzplan_2023.csv` **nicht** mitkommen.
+  3. Kombinieren Sie die Dateien.
+  4. Stellen Sie **Trennzeichen** (Semikolon) und **Codierung** (UTF-8) sicher.
+  5. **Denksport:** Bei Velora steckte im Dateinamen die *Region*. Was steckt bei
+     Bürotech im Dateinamen – und ist diese Info redundant zum Datum?
+tip: |
+  „Aus Ordner" lädt **jede** Datei des Ordners – deshalb erst die Spalte `Name`
+  filtern, *bevor* Sie kombinieren. Achten Sie oben im Vorschaufenster auf die drei
+  Felder Codierung / Trennzeichen / Datentyperkennung.
+solution: |
+  - **Daten abrufen → Ordner →** Pfad `buerotech` → **Daten transformieren**.
+  - Spalte `Name` → **Textfilter → beginnt mit „Auftraege"**. So bleiben die
+    Stammdaten- und Plan-Dateien außen vor.
+  - `Content` per Doppelpfeil **kombinieren** (Append der vier Quartale).
+  - Trennzeichen **Semikolon**, Codierung **65001: UTF-8**.
+
+  **Denksport:** Im Dateinamen steckt das **Quartal** – das ist **redundant** zum
+  `Datum` (das Quartal lässt sich daraus ableiten). Anders als Veloras Region muss
+  man es also **nicht** behalten.

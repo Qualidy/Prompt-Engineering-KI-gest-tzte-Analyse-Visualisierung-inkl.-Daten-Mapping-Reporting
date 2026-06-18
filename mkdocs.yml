@@ -1,28 +1,55 @@
-site_name: Basis Wiki
+site_name: Power BI Schulung
+site_description: Von den Rohdaten zum fertigen Datenmodell – Daten einlesen, transformieren, modellieren (für Controlling)
 
 nav:
-  - Übersicht: index.md
-  - Topic 1: content/1.md
-
+  - Start: index.md
+  - Datensätze: content/datensaetze.md
+  - 0 · Grundlagen: content/00-grundlagen.md
+  - 1 · Daten einlesen: content/01-einlesen.md
+  - 2 · Daten transformieren: content/02-transformieren.md
+  - 3 · Datenmodell erstellen: content/03-datenmodell.md
+  - 4 · Abschluss & Checkliste: content/04-abschluss.md
 
 theme:
   name: material
+  language: de
   palette:
-    # primary: blue
-    # accent: green
-    primary: amber
-    accent: deep orange
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: amber
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Zum dunklen Modus wechseln
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: amber
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Zum hellen Modus wechseln
   logo: assets/logo.png
   favicon: assets/favicon.png
+  icon:
+    admonition:
+      merksatz: material/lightbulb-on
+      profi: material/rocket-launch
+      gemeinsam: material/monitor-dashboard
   features:
     - navigation.tracking
     - navigation.path
     - navigation.top
     - navigation.footer
+    - navigation.instant
+    - navigation.instant.progress
     - toc.follow
     - toc.integrate
     - content.code.copy
     - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
+    - search.suggest
+    - search.highlight
 
 markdown_extensions:
   - pymdownx.keys
@@ -33,18 +60,26 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.mark
+  - pymdownx.caret
+  - pymdownx.tilde
+  - footnotes
   - toc:
       permalink: true
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - admonition
   - attr_list
   - md_in_html
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.highlight:
       linenums: true
+      anchor_linenums: true
 
 extra_css:
   - stylesheets/logo.css
@@ -52,14 +87,15 @@ extra_css:
   - stylesheets/video_admonition.css
   - stylesheets/python_tutor_admonition.css
   - stylesheets/mermaid.css
+  - stylesheets/powerbi.css
 
 extra_javascript:
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
-  
+
 plugins:
-    - search
-    - macros
+  - search
+  - macros
 
 extra:
   social:
@@ -67,12 +103,11 @@ extra:
       link: https://www.kununu.com/de/qualidy
     - icon: fontawesome/brands/linkedin
       link: https://de.linkedin.com/company/qualidy
-    - icon: material/google
-      link: https://www.google.com/search?sca_esv=7e6ba2047fcb60f3&uds=AMwkrPtyB8MsmozA4Lwzqy2G2HCu-abqzc6moOG48q3gP5dtjTRzC2Ws0eSwcyLXDfZNuYCrZ7ByIreHLG9th3vKLekPoVeey0tumAbet4cVLQRLzdRFhUbOGbnyp3xo1V0hzzaNmkCN&si=AKbGX_rcuucMgom2rba1cdwsvM2SVoIkP2btyqGMV4t0GuHIs4sGV_1tpuqR0YHG4Rzd9SdJcL-lW6E-2aJA5azZLTKkIOrZ2j2aWwoBkVbdEJ0o0GPcQhs%3D&q=Qualidy+GmbH+Rezensionen&sa=X&ved=2ahUKEwibsbnSgcmFAxXNQvEDHaVYCiAQ3PALegQIRxAF
     - icon: fontawesome/solid/globe
       link: https://qualidy.de
 
 watch:
   - tasks
+  - main.py
 
 copyright: Copyright &copy; 2026 Qualidy GmbH

@@ -1,0 +1,34 @@
+title: Bürotech-Aufträge bereinigen
+difficulty: 2
+question: |
+  Bereinigen Sie die kombinierte **Aufträge**-Abfrage:
+
+  1. Überflüssige Ordnerspalten entfernen (**Andere Spalten entfernen**).
+  2. Das **Datum robust parsen** – Achtung: hier gibt es **drei** Formate
+     (`dd.MM.yyyy`, das ISO-Format **und** eine Zeile `15/03/2023`).
+  3. `Menge` (ganze Zahl), `Listenpreis` (Dezimal, de-DE) und `Rabatt`
+     (leer → 0) typisieren.
+  4. Die **Warengruppe** vereinheitlichen (`technik`, `SCHREIBGERÄTE`, `papier `).
+  5. Die Zeile mit **fehlender ArtikelNr** mit einem **Linken Anti-Join** gegen
+     `Artikel` finden. Behalten oder entfernen – begründen Sie.
+tip: |
+  Für drei Datumsformate schachteln Sie `try … otherwise` mehrfach. Für die
+  Warengruppe hilft das „Dreifach-Bad": **Kürzen → Bereinigen → Großschreibung in
+  jedem Wort**.
+solution: |
+  **Datum (drei Formate):**
+
+  ```m
+  try Date.FromText([Datum], [Format="dd.MM.yyyy", Culture="de-DE"])
+  otherwise try Date.FromText([Datum], [Format="dd/MM/yyyy", Culture="de-DE"])
+  otherwise Date.FromText([Datum])   // fängt das ISO-Format yyyy-MM-dd
+  ```
+
+  **Warengruppe:** Spalte markieren → **Transformieren → Format → Kürzen →
+  Bereinigen → Großschreibung in jedem Wort** ⇒ `Papier`, `Schreibgeräte`, `Technik`.
+
+  **Rabatt:** Null durch `0` ersetzen, dann Typ **Dezimalzahl (de-DE)**.
+
+  **Fehlende ArtikelNr:** Aufträge mit `Artikel` zusammenführen → **Linker Anti** →
+  übrig bleibt genau die Zeile ohne ArtikelNr. **Empfehlung: behalten** und im Modell
+  auf „Unbekannt" mappen, damit der Umsatz nicht verloren geht.

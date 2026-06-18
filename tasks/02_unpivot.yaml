@@ -1,0 +1,19 @@
+title: Bürotech-Plan entpivotieren
+difficulty: 2
+question: |
+  Der `Umsatzplan_2023` von Bürotech liegt im **Pivot-Layout** vor (Warengruppe ×
+  Monate). Machen Sie daraus eine **lange** Tabelle `Warengruppe ; Monat ; Planumsatz`.
+
+  Denken Sie an die **Titelzeile**, die **Leerzeile** und die **Summenzeile**.
+tip: |
+  Erst die oberen Zeilen entfernen und die erste Zeile als Überschrift setzen, dann
+  die Summenzeile herausfiltern – **danach** entpivotieren. Wählen Sie
+  „**Andere** Spalten entpivotieren", damit ein neuer Monat automatisch mitgenommen wird.
+solution: |
+  1. **Start → Zeilen entfernen → Obere Zeilen entfernen → 2** (Titel + Leerzeile).
+  2. **Erste Zeile als Überschrift verwenden**.
+  3. Spalte `Warengruppe` → Filter → Haken bei `Summe` entfernen.
+  4. Spalte `Warengruppe` markieren → Rechtsklick → **Andere Spalten entpivotieren**.
+  5. `Attribut → Monat`, `Wert → Planumsatz`; `Planumsatz` als Zahl (de-DE) typisieren.
+
+  Ergebnis: **4 Warengruppen × 12 Monate = 48 Zeilen**.
