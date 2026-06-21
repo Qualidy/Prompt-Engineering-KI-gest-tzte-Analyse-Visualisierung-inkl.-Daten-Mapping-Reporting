@@ -156,7 +156,7 @@ zwei Schritten:
 | „Mach es wie hier" | **Spalte aus Beispielen** |
 | Text säubern | Format → **Kürzen, Bereinigen, Groß/Klein** |
 
-![Power Query M](../assets/screenshots/08 Power Query M.png)
+![Power Query M](../assets/screenshots/08 Power.png)
 
 !!! merksatz "Merksatz"
 

@@ -22,6 +22,7 @@ durchgängigen Beispielen.
 <div class="grid cards fancy" markdown>
 
 - [:material-folder-table: **Datensätze & Download**](content/datensaetze.md)
+- [:material-school: **Schrittweise Anleitung aller Anfang**](content/Schritt-fürSchritt-Anleitung.md)
 - [:material-school: **0 · Grundlagen**](content/00-grundlagen.md)
 - [:material-database-import: **1 · Daten einlesen**](content/01-einlesen.md)
 - [:material-auto-fix: **2 · Daten transformieren**](content/02-transformieren.md)

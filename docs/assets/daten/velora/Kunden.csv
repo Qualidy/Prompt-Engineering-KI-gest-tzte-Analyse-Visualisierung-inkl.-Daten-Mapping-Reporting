@@ -1,11 +1,11 @@
 KundenNr;Kunde;Ort;PLZ;Land;Segment
-K-001;Radwelt München GmbH;München;80331;DE;Filialist
-K-002;CycleStore Hamburg;Hamburg;20095;DE;Filialist
-K-003;Bike & Co Leipzig;Leipzig;04109;DE;Fachhandel
+K-001;radwelt münchen GmbH;München;80331;DE;Filialist
+K-002;CycleStore Hamburg;  Hamburg ;20095;Ger;Filialist
+K-003;Bike & Co Leipzig;Leipzig  ;04109;DE;Fachhandel 
 K-004;VeloPoint Köln;Köln;50667;DE;Fachhandel
 K-005;Drahtesel Wien;Wien;1010;AT;Fachhandel
-K-006;PedalProfi Zürich;Zürich;8001;CH;Filialist
-K-007;Sport Müller Dresden;Dresden;01067;DE;Fachhandel
-K-008;RadDiscount Berlin;Berlin;10115;DE;Discounter
+K-006;PedalProfi Zürich;Zürich;8001;CH;Filialist 
+K-007;SPort Müller Dresden;DRESDEN;01067;DE;Fachhandel
+K-008;RadDiscount Berlin;Berlin;10115;De;Discounter
 K-009;Zweirad Stuttgart;Stuttgart;70173;DE;Fachhandel
 K-010;BikeMarkt Salzburg;Salzburg;5020;AT;Filialist

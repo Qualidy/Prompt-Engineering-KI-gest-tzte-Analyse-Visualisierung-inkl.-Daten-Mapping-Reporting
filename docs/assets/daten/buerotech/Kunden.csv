@@ -1,9 +1,9 @@
 KundenNr;Firma;Ort;PLZ;Land;Branche
 F-01;Kanzlei Weber & Partner;Frankfurt;60311;DE;Dienstleistung
 F-02;Stadtverwaltung Bonn;Bonn;53111;DE;Öffentlich
-F-03;TechStart UG;Berlin;10178;DE;IT
-F-04;Praxis Dr. Schmidt;Hamburg;20144;DE;Gesundheit
+F-03;TechStart UG;berlin;10178;DE;IT
+F-04;Praxis Dr. Schmidt;Hamburg;20144;Ger;Gesundheit
 F-05;Bauplan AG;Linz;4020;AT;Bau
-F-06;Consulting Group Basel;Basel;4051;CH;Dienstleistung
-F-07;Schule am Park;Dortmund;44135;DE;Öffentlich
-F-08;Logistik Nord GmbH;Bremen;28195;DE;Logistik
+F06;Consulting Group Basel;Basel;4051;CH;Dienstleistung
+F-07;Schule am Park;DortMMund;44135;DE;Öffentlich
+-08;Logistik Nord GmbH;Bremen;28195;DE;Logistik
