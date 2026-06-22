@@ -1,0 +1,73 @@
+/* =====================================================================
+   Power BI Schulung – eigene Admonitions & kleine Verschönerungen
+   Muster bewusst identisch zu video_admonition.css / python_tutor_admonition.css
+   ===================================================================== */
+
+/* ---- Icons als SVG-Masken ------------------------------------------ */
+:root {
+  /* Glühbirne = Merksatz */
+  --md-admonition-icon--merksatz: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1zm3-19A7 7 0 0 0 5 9c0 2.4 1.2 4.5 3 5.7V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.3c1.8-1.2 3-3.3 3-5.7a7 7 0 0 0-7-7z"/></svg>');
+  /* Stern = Profi-Ausblick */
+  --md-admonition-icon--profi: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l2.95 6.36 6.99.73-5.2 4.7 1.46 6.86L12 18.6 5.8 21.55l1.46-6.86-5.2-4.7 6.99-.73L12 2z"/></svg>');
+  /* Bildschirm/Maus = Gemeinsam am Rechner */
+  --md-admonition-icon--gemeinsam: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 3H3a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h7v2H8v2h8v-2h-2v-2h7a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zm-1 12H4V5h16v10z"/></svg>');
+}
+
+/* ---- Merksatz (amber/gold) ----------------------------------------- */
+.md-typeset .admonition.merksatz,
+.md-typeset details.merksatz {
+  border-color: rgb(245, 158, 11);
+}
+.md-typeset .merksatz > .admonition-title,
+.md-typeset .merksatz > summary {
+  background-color: rgba(245, 158, 11, 0.12);
+}
+.md-typeset .merksatz > .admonition-title::before,
+.md-typeset .merksatz > summary::before {
+  background-color: rgb(245, 158, 11);
+  -webkit-mask-image: var(--md-admonition-icon--merksatz);
+          mask-image: var(--md-admonition-icon--merksatz);
+}
+
+/* ---- Profi-Ausblick (indigo) --------------------------------------- */
+.md-typeset .admonition.profi,
+.md-typeset details.profi {
+  border-color: rgb(124, 58, 237);
+}
+.md-typeset .profi > .admonition-title,
+.md-typeset .profi > summary {
+  background-color: rgba(124, 58, 237, 0.12);
+}
+.md-typeset .profi > .admonition-title::before,
+.md-typeset .profi > summary::before {
+  background-color: rgb(124, 58, 237);
+  -webkit-mask-image: var(--md-admonition-icon--profi);
+          mask-image: var(--md-admonition-icon--profi);
+}
+
+/* ---- Gemeinsam am Rechner (teal) ----------------------------------- */
+.md-typeset .admonition.gemeinsam,
+.md-typeset details.gemeinsam {
+  border-color: rgb(13, 148, 136);
+}
+.md-typeset .gemeinsam > .admonition-title,
+.md-typeset .gemeinsam > summary {
+  background-color: rgba(13, 148, 136, 0.12);
+}
+.md-typeset .gemeinsam > .admonition-title::before,
+.md-typeset .gemeinsam > summary::before {
+  background-color: rgb(13, 148, 136);
+  -webkit-mask-image: var(--md-admonition-icon--gemeinsam);
+          mask-image: var(--md-admonition-icon--gemeinsam);
+}
+
+/* ---- Kleine Verschönerungen ---------------------------------------- */
+/* Daten-Vorschau-Tabellen etwas kompakter & monospaced für CSV-Auszüge */
+.md-typeset .datensatz-tabelle table {
+  font-size: 0.72rem;
+}
+/* Hervorgehobene "Stolperfalle"-Wörter */
+.md-typeset mark {
+  border-radius: 0.2em;
+  padding: 0 0.15em;
+}
