@@ -1,0 +1,17 @@
+title: Skalenniveaus bei Bürotech bestimmen
+difficulty: 1
+question: |
+  Ordnen Sie die folgenden Bürotech-Spalten dem richtigen **Skalenniveau** zu –
+  **nominal**, **ordinal** oder **metrisch**:
+
+  `Warengruppe` · `Branche` · `Menge` · `Listenpreis` · `Monat` · `Preisklasse`
+tip: |
+  Fragen Sie sich pro Spalte: Gibt es eine **Reihenfolge**? Und darf man damit
+  **rechnen** (summieren, mitteln)? Nur metrische Größen werden zu Measures.
+solution: |
+  - **Nominal** (keine Reihenfolge): `Warengruppe`, `Branche`
+  - **Ordinal** (geordnet, ohne festen Abstand): `Monat`, `Preisklasse`
+  - **Metrisch** (echte Zahl, rechenbar): `Menge`, `Listenpreis`
+
+  Merke: `Monat` ist **ordinal** – deshalb „Nach Spalte sortieren" auf die
+  Monatsnummer, sonst steht der April vor dem Januar.

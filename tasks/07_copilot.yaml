@@ -1,0 +1,25 @@
+title: Copilot & Kontext verstehen
+difficulty: 1
+question: |
+  1. **Begriffe:** Erklären Sie in je einem Satz den Unterschied zwischen **LLM**,
+     **Agent** und **Agentenworkflow**.
+  2. **Kontext:** Wer setzt **System-**, **Developer-** und **User-Prompt**? Wozu dienen
+     **Function Calling** und **RAG**?
+  3. **Copilot/DAX:** Lassen Sie (gedanklich oder real) Copilot ein Measure
+     `Zielerreichung %` erzeugen und prüfen Sie es gegen Kapitel 3 – nutzt es `DIVIDE`?
+  4. **Modellhygiene:** Warum liefert Copilot bessere Ergebnisse, wenn die Spalte
+     „Umsatz" heißt statt „Summe_Betrag_2"?
+tip: |
+  Ein **LLM redet, ein Agent handelt, ein Workflow organisiert.** Copilot ist ein Agent,
+  der Ihre **Feldnamen als Kontext** liest (das ist RAG in der Praxis).
+solution: |
+  1. **LLM** = Sprachmodell, erzeugt nur Text; **Agent** = LLM + Werkzeuge + Ziel +
+     Schleife, kann *handeln*; **Agentenworkflow** = mehrere Schritte/Agenten
+     *orchestriert*.
+  2. **System-Prompt** = Betreiber (Rahmen/Rolle), **Developer-Prompt** = Entwickler
+     (technische Anweisungen), **User-Prompt** = Sie (die Aufgabe). **Function Calling** =
+     Werkzeuge nutzen; **RAG** = relevante Daten/Feldnamen in den Kontext laden.
+  3. Erwartet: `Zielerreichung % = DIVIDE ( [Umsatz], [Planumsatz] )` – **prüfen**, ob
+     `DIVIDE` statt „/" verwendet und auf die richtigen Measures verwiesen wird.
+  4. Copilot liest **Feldnamen als Kontext**; sprechende Namen versteht es direkt,
+     kryptische führen zu Raten. Gute KI beginnt bei guten Daten.

@@ -1,14 +1,19 @@
 site_name: Power BI Schulung
-site_description: Von den Rohdaten zum fertigen Datenmodell – Daten einlesen, transformieren, modellieren (für Controlling)
+site_description: Von den Rohdaten zum fertigen Datenmodell und weiter zu Visualisierung, KI & Copilot (für Controlling)
 
 nav:
   - Start: index.md
   - Datensätze: content/datensaetze.md
-  - 0 · Grundlagen: content/00-grundlagen.md
-  - 1 · Daten einlesen: content/01-einlesen.md
-  - 2 · Daten transformieren: content/02-transformieren.md
-  - 3 · Datenmodell erstellen: content/03-datenmodell.md
-  - 4 · Abschluss & Checkliste: content/04-abschluss.md
+  - "Teil 1 – Vom Rohdatensatz zum Modell":
+      - 0 · Grundlagen: content/00-grundlagen.md
+      - 1 · Daten einlesen: content/01-einlesen.md
+      - 2 · Daten transformieren: content/02-transformieren.md
+      - 3 · Datenmodell erstellen: content/03-datenmodell.md
+      - 4 · Abschluss & Checkliste: content/04-abschluss.md
+  - "Teil 2 – Auswertung, Vorhersage & KI":
+      - 5 · Visualisierung: content/05-visualisierung.md
+      - 6 · Machine Learning & KI: content/06-machine-learning-ki.md
+      - 7 · Copilot & Datenanalyse: content/07-copilot.md
 
 theme:
   name: material

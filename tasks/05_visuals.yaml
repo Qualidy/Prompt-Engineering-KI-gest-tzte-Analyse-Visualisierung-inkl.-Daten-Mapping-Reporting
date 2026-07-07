@@ -1,0 +1,25 @@
+title: Erstes Bürotech-Dashboard bauen
+difficulty: 2
+question: |
+  Bauen Sie – vom Einfachen zum Reichen – eine erste Berichtsseite für Bürotech:
+
+  1. **Univariat:** zwei **KPI-Karten** mit `[Umsatz]` und `[Zielerreichung %]`.
+  2. **Bivariat:** ein **Säulendiagramm** `Umsatz je Warengruppe` und ein
+     **Liniendiagramm** `Umsatz je Monat` (auf korrekte Monatssortierung achten!).
+  3. **Multivariat:** ergänzen Sie im Säulendiagramm `Branche` als **Legende**.
+  4. **Interaktiv:** ein **Datenschnitt** auf `Quartal` – prüfen, ob alle Visuals
+     mitfiltern.
+  5. **Styleguide:** jedem Visual einen **aussagenden Titel** geben und Überflüssiges
+     (Gitternetz, unnötige Beschriftungen) entfernen.
+tip: |
+  Beginnen Sie jedes Visual **als Tabelle**, um die Zahlen gegen eine Handrechnung zu
+  prüfen – erst dann in den Diagrammtyp wechseln. Dimension → Achse/Legende,
+  Measure → Werte.
+solution: |
+  - KPI-Karten: Visual **Karte**, Measure hineinziehen.
+  - Säulen: `Warengruppe` auf die Achse, `[Umsatz]` in die Werte; `Branche` als Legende
+    macht es gruppiert/gestapelt (multivariat).
+  - Linie: `Datum[Monat]` auf die Achse (dank markierter Datumstabelle korrekt sortiert),
+    `[Umsatz]` in die Werte.
+  - Datenschnitt auf `Datum[Quartal]` filtert dank Sternschema **alle** Visuals.
+  - Titel als **Aussage**: „Umsatz je Warengruppe – Büromöbel führt" statt nur „Umsatz".

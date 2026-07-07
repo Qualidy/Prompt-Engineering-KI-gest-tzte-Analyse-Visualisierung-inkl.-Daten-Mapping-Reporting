@@ -1,0 +1,22 @@
+title: KI-Funktionen an Bürotech erproben
+difficulty: 2
+question: |
+  1. **Einordnen:** Sind diese Aufgaben *supervised*, *unsupervised* oder *generativ*?
+     (a) Kunden nach Kaufverhalten in Gruppen teilen, (b) den Umsatz für Q1/2024
+     schätzen, (c) eine Textzusammenfassung des Berichts erzeugen.
+  2. **Schlüsseleinflussfaktoren:** Analysieren Sie `[DB-Marge %]` nach `Warengruppe`
+     und `Branche`. Welcher Faktor treibt die Marge?
+  3. **Prognose:** Fügen Sie dem Liniendiagramm `Umsatz je Monat` eine **Prognose**
+     hinzu – und notieren Sie, warum sie hier mit Vorsicht zu genießen ist.
+tip: |
+  KI in Power BI ist ein **Knopf, kein Zauber**: Die Visuals *Schlüsseleinflussfaktoren*
+  und *Prognose* brauchen keine Zeile Code. Prüfen Sie jede KI-Aussage gegen die
+  Rohzahlen.
+solution: |
+  1. (a) **unsupervised** (Clustering, kein Label), (b) **supervised/Regression**
+     (Zielgröße ist eine Zahl), (c) **generativ** (neuer Text).
+  2. Visual **Schlüsseleinflussfaktoren**: `[DB-Marge %]` als „Analysieren",
+     `Warengruppe`/`Branche` als „Erklären" – Power BI zeigt den stärksten Treiber.
+  3. Prognose über den **Analysebereich** des Liniendiagramms. Vorsicht: Mit **nur einem
+     Jahr** Historie fehlen Saison-/Trendmuster – die Prognose zeigt nur das *Prinzip*
+     (wie die Time Intelligence in Kapitel 3).
