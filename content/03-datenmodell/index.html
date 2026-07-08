@@ -1,0 +1,1393 @@
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Von den Rohdaten zum fertigen Datenmodell und weiter zu Visualisierung, KI & Copilot (für Controlling)">
+      
+      
+      
+      
+        <link rel="prev" href="../02-transformieren/">
+      
+      
+        <link rel="next" href="../04-abschluss/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>3 · Datenmodell erstellen - Power BI Schulung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--merksatz:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%206a6%206%200%200%201%206%206c0%202.22-1.21%204.16-3%205.2V19a1%201%200%200%201-1%201h-4a1%201%200%200%201-1-1v-1.8c-1.79-1.04-3-2.98-3-5.2a6%206%200%200%201%206-6m2%2015v1a1%201%200%200%201-1%201h-2a1%201%200%200%201-1-1v-1zm6-10h3v2h-3zM1%2011h3v2H1zM13%201v3h-2V1zM4.92%203.5l2.13%202.14-1.42%201.41L3.5%204.93zm12.03%202.13%202.12-2.13%201.43%201.43-2.13%202.12z%22/%3E%3C/svg%3E');--md-admonition-icon--profi:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22m13.13%2022.19-1.63-3.83c1.57-.58%203.04-1.36%204.4-2.27zM5.64%2012.5l-3.83-1.63%206.1-2.77C7%209.46%206.22%2010.93%205.64%2012.5M21.61%202.39S16.66.269%2011%205.93c-2.19%202.19-3.5%204.6-4.35%206.71-.28.75-.09%201.57.46%202.13l2.13%202.12c.55.56%201.37.74%202.12.46A19.1%2019.1%200%200%200%2018.07%2013c5.66-5.66%203.54-10.61%203.54-10.61m-7.07%207.07c-.78-.78-.78-2.05%200-2.83s2.05-.78%202.83%200c.77.78.78%202.05%200%202.83s-2.05.78-2.83%200m-5.66%207.07-1.41-1.41zM6.24%2022l3.64-3.64c-.34-.09-.67-.24-.97-.45L4.83%2022zM2%2022h1.41l4.77-4.76-1.42-1.41L2%2020.59zm0-2.83%204.09-4.08c-.21-.3-.36-.62-.45-.97L2%2017.76z%22/%3E%3C/svg%3E');--md-admonition-icon--gemeinsam:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M21%2016V4H3v12zm0-14a2%202%200%200%201%202%202v12a2%202%200%200%201-2%202h-7v2h2v2H8v-2h2v-2H3a2%202%200%200%201-2-2V4c0-1.11.89-2%202-2zM5%206h9v5H5zm10%200h4v2h-4zm4%203v5h-4V9zM5%2012h4v2H5zm5%200h4v2h-4z%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/python_tutor_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/powerbi.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3-datenmodell-erstellen" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Kopfzeile">
+    <a href="../.." title="Power BI Schulung" class="md-header__button md-logo" aria-label="Power BI Schulung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Power BI Schulung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3 · Datenmodell erstellen
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="deep-orange"  aria-label="Zum dunklen Modus wechseln"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Zum dunklen Modus wechseln" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="deep-orange"  aria-label="Zum hellen Modus wechseln"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Zum hellen Modus wechseln" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Zurücksetzen" aria-label="Zurücksetzen" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Power BI Schulung" class="md-nav__button md-logo" aria-label="Power BI Schulung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Power BI Schulung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Start
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datensaetze/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Datensätze
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Teil 1 – Vom Rohdatensatz zum Modell
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Teil 1 – Vom Rohdatensatz zum Modell
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-grundlagen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    0 · Grundlagen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-einlesen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 · Daten einlesen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-transformieren/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 · Daten transformieren
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    3 · Datenmodell erstellen
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 · Datenmodell erstellen
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-warum-uberhaupt-modellieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Warum überhaupt modellieren?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-das-sternschema-star-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Das Sternschema (Star Schema)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-gemeinsam-velora-beziehungen-anlegen" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Gemeinsam (Velora): Beziehungen anlegen
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 Gemeinsam (Velora): Beziehungen anlegen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kardinalitat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kardinalität
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filterrichtung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filterrichtung
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-die-kalender-datumstabelle-pflicht-nicht-kur" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Die Kalender-/Datumstabelle – Pflicht, nicht Kür
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4 Die Kalender-/Datumstabelle – Pflicht, nicht Kür">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zwei-dinge-die-man-nie-vergisst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zwei Dinge, die man nie vergisst
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-modell-aufraumen-benutzerfreundlich-machen" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 Modell aufräumen &amp; benutzerfreundlich machen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-kennzahlen-berechnete-spalte-vs-measure-kurzer-dax-teil" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6 Kennzahlen: berechnete Spalte vs. Measure (kurzer DAX-Teil)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.6 Kennzahlen: berechnete Spalte vs. Measure (kurzer DAX-Teil)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gemeinsam-velora-die-kern-measures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gemeinsam (Velora): die Kern-Measures
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#37-haufige-modellierungsprobleme-elegante-losungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.7 Häufige Modellierungsprobleme &amp; elegante Lösungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#38-qualitatssicherung-dokumentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.8 Qualitätssicherung &amp; Dokumentation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Übungen
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-abschluss/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 · Abschluss & Checkliste
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Teil 2 – Auswertung, Vorhersage & KI
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Teil 2 – Auswertung, Vorhersage & KI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-visualisierung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 · Visualisierung
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-machine-learning-ki/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 · Machine Learning & KI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-copilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 · Copilot & Datenanalyse
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-ml-excel-powerbi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 · ML in Excel & Power BI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-automl-dataiku/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 · AutoML-Plattformen (Dataiku)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="3-datenmodell-erstellen">3 · Datenmodell erstellen<a class="headerlink" href="#3-datenmodell-erstellen" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">Ziel dieses Kapitels</p>
+<p>Aus sauberen Tabellen wird ein <strong>belastbares Modell</strong>: Sternschema, Beziehungen,
+Kalendertabelle und erste Kennzahlen. <strong>DAX</strong> kommt – wie versprochen – <strong>nur kurz</strong>.</p>
+</div>
+<h2 id="31-warum-uberhaupt-modellieren">3.1 Warum überhaupt modellieren?<a class="headerlink" href="#31-warum-uberhaupt-modellieren" title="Permanent link">&para;</a></h2>
+<p>Verlockung: alles per Merge in <strong>eine große Tabelle</strong> stopfen. Drei Gründe dagegen:
+<strong>Größe</strong> (Stammdaten millionenfach wiederholt), <strong>Pflege</strong> (jede Adressänderung in
+jeder Zeile) und <strong>Auswertung</strong> (Filter soll <em>alle</em> Fakten erfassen – das leistet
+eine Beziehung).</p>
+<div class="admonition merksatz">
+<p class="admonition-title">Merksatz</p>
+<p>Eine flache Riesentabelle ist wie ein <strong>Schrank ohne Fächer</strong>: reinwerfen geht
+schnell, wiederfinden nie. Das Modell sind die Fächer.</p>
+</div>
+<h2 id="32-das-sternschema-star-schema">3.2 Das Sternschema (Star Schema)<a class="headerlink" href="#32-das-sternschema-star-schema" title="Permanent link">&para;</a></h2>
+<p><img alt="Modellansicht" src="../../assets/screenshots/30%20Modellansicht.png" /></p>
+<p><img alt="Datenmodell neue Beziehung" src="../../assets/screenshots/31%20Datenmodell%20Neue%20Beziehung.png" /></p>
+<p><img alt="Datenmodell nach neuer Beziehung" src="../../assets/screenshots/32%20Datenmodell%20nach%20neuer%20Beziehung.png" /></p>
+<pre class="mermaid"><code>flowchart TD
+    P["Dim Produkt"]
+    K["Dim Kunde"]
+    D["Dim Datum"]
+    F["Fakt Bestellungen&lt;br/&gt;Menge · Preis · Umsatz"]
+    P --&gt; F
+    K --&gt; F
+    D --&gt; F</code></pre>
+<ul>
+<li><strong>Faktentabelle</strong> (Mitte): die <strong>Ereignisse/Messwerte</strong> – viele Zeilen, schmal,
+  v. a. <strong>Schlüssel + Zahlen</strong> (<code>Bestellungen</code>).</li>
+<li><strong>Dimensionstabellen</strong> (außen): <strong>beschreibende Attribute</strong> zum Filtern und
+  Gruppieren – wenige Zeilen, breit (<code>Produkte</code>, <code>Kunden</code>, <code>Datum</code>).</li>
+</ul>
+<div class="admonition merksatz">
+<p class="admonition-title">Merksatz</p>
+<p><strong>Fakten sind Zahlen, Dimensionen sind Worte.</strong> Wonach Sie filtern wollen (Kunde,
+Produkt, Monat), gehört in eine Dimension.</p>
+</div>
+<div class="admonition merksatz">
+<p class="admonition-title">Merksatz</p>
+<p>Im Zweifel <strong>Stern statt Schneeflocke</strong>. Jede zusätzliche Tabelle in der Kette ist
+Pflegeaufwand, der sich selten lohnt.</p>
+</div>
+<p><strong>Granularität:</strong> Bei Velora = <strong>eine Zeile = eine Bestellposition</strong>. Das ist die
+feinste sinnvolle Ebene.</p>
+<div class="admonition merksatz">
+<p class="admonition-title">Merksatz</p>
+<p>Lieber <strong>zu fein als zu grob</strong> speichern. Verdichten kann man immer, Details
+zurückholen nie.</p>
+</div>
+<h2 id="33-gemeinsam-velora-beziehungen-anlegen">3.3 Gemeinsam (Velora): Beziehungen anlegen<a class="headerlink" href="#33-gemeinsam-velora-beziehungen-anlegen" title="Permanent link">&para;</a></h2>
+<div class="admonition gemeinsam">
+<p class="admonition-title">Mitmachen am Rechner</p>
+<p>In <strong>Power Query → Schließen &amp; übernehmen</strong> laden wir <code>Bestellungen</code>, <code>Produkte</code>,
+<code>Kunden</code>. Dann wechseln wir gemeinsam in die <strong>Modellansicht</strong>.</p>
+</div>
+<ol>
+<li>Beziehung <strong>Bestellungen[ProduktNr] → Produkte[ProduktNr]</strong> ziehen.</li>
+<li>Beziehung <strong>Bestellungen[KundenNr] → Kunden[KundenNr]</strong> anlegen.</li>
+</ol>
+<h3 id="kardinalitat">Kardinalität<a class="headerlink" href="#kardinalitat" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>1:n (Viele-zu-Eins)</strong> – der <strong>Normalfall</strong>: die „1"-Seite ist die <strong>Dimension</strong>,
+  die „n"-Seite die <strong>Faktentabelle</strong>.</li>
+<li><strong>1:1</strong> selten, <strong>n:m</strong> Sonderfall (siehe 3.7).</li>
+</ul>
+<h3 id="filterrichtung">Filterrichtung<a class="headerlink" href="#filterrichtung" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Einfach (1-Richtung)</strong> – der <strong>Standard</strong>: die Dimension filtert die Fakten.</li>
+<li><strong>Beidseitig</strong> – nur mit konkretem Grund; erzeugt sonst <strong>mehrdeutige Pfade</strong>.</li>
+</ul>
+<div class="admonition merksatz">
+<p class="admonition-title">Merksatz</p>
+<p>Der Filter fließt vom <strong>Einen</strong> zu den <strong>Vielen</strong> – von der Dimension in die
+Fakten. Der Pfeil zeigt von der Dimension weg.</p>
+</div>
+<div class="admonition merksatz">
+<p class="admonition-title">Merksatz</p>
+<p><strong>Bidirektional ist kein Komfort-Schalter, sondern ein Risiko.</strong> Einschalten nur
+mit Grund – nie „vorsichtshalber".</p>
+</div>
+<h2 id="34-die-kalender-datumstabelle-pflicht-nicht-kur">3.4 Die Kalender-/Datumstabelle – Pflicht, nicht Kür<a class="headerlink" href="#34-die-kalender-datumstabelle-pflicht-nicht-kur" title="Permanent link">&para;</a></h2>
+<p>Ein eigenes Bestelldatum reicht nicht: Monate ohne Bestellung fehlen, „Vorjahr"
+funktioniert nicht, jede Faktentabelle hätte ihren eigenen Datumsbezug. Lösung: <strong>eine
+zentrale Datumstabelle</strong>, an die <em>alle</em> Fakten andocken.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Variante A · Power Query (M)</label><label for="__tabbed_1_2">Variante B · DAX</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span>
+<span class="normal"><a href="#__codelineno-0-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>let
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>    Start = #date(2023,1,1),
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>    Ende  = #date(2023,12,31),
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>    Tage  = Duration.Days(Ende - Start) + 1,
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>    Liste = List.Dates(Start, Tage, #duration(1,0,0,0)),
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>    Tab   = Table.FromList(Liste, Splitter.SplitByNothing(), {&quot;Datum&quot;})
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>in
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>    Tab
+</code></pre></div></td></tr></table></div>
+<p>Dann Spalten ergänzen: <code>Jahr</code>, <code>Quartal</code>, <code>Monatsnummer</code>, <code>Monatsname</code>, <code>KW</code>.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>Datum = CALENDARAUTO()
+</code></pre></div></td></tr></table></div>
+<p>Legt automatisch den passenden Datumsbereich an; Spalten per <code>FORMAT(...)</code> ergänzen.</p>
+</div>
+</div>
+</div>
+<h3 id="zwei-dinge-die-man-nie-vergisst">Zwei Dinge, die man <strong>nie</strong> vergisst<a class="headerlink" href="#zwei-dinge-die-man-nie-vergisst" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Als Datumstabelle markieren:</strong> <em>Tabellentools → Als Datumstabelle markieren</em> →
+   Spalte <code>Datum</code>. Erst dann funktioniert <strong>Time Intelligence</strong> verlässlich.</li>
+<li><strong>Monatsnamen sortieren:</strong> „Jan, Feb …" wird sonst <strong>alphabetisch</strong> sortiert.
+   <em>Spaltentools → Nach Spalte sortieren → Monatsnummer</em>.</li>
+<li>Beziehung <strong>Bestellungen[Datum] → Datum[Datum]</strong> anlegen (1:n, einfach).</li>
+</ol>
+<div class="admonition merksatz">
+<p class="admonition-title">Merksatz</p>
+<p>Ohne <strong>markierte</strong> Datumstabelle keine saubere Zeitrechnung. Und ohne <strong>„Nach
+Spalte sortieren"</strong> steht der April vor dem Januar.</p>
+</div>
+<div class="admonition profi">
+<p class="admonition-title">Profi-Ausblick: echte Controlling-Kalender</p>
+<p>Echte Kalender brauchen mehr: <strong>Geschäftsjahr</strong> (z. B. Start Juli), <strong>Perioden</strong>,
+<strong>Arbeitstage/Feiertage</strong>, Vorjahres-Mapping. Man pflegt sie zentral, damit <em>alle</em>
+Berichte denselben Kalender nutzen. Und: hat die Faktentabelle <strong>zwei</strong> Datumsspalten
+(Bestell- und Lieferdatum), braucht man <strong>zwei Beziehungen</strong> zur selben
+Datumstabelle – eine davon <strong>inaktiv</strong> (siehe 3.7).</p>
+</div>
+<div class="admonition merksatz">
+<p class="admonition-title">Merksatz</p>
+<p>Plan und Ist treffen sich auf der <strong>gröbsten gemeinsamen Ebene</strong> – hier dem Monat.
+Man rechnet Ist auf Monat hoch, nicht Plan auf Tage herunter.</p>
+</div>
+<h2 id="35-modell-aufraumen-benutzerfreundlich-machen">3.5 Modell aufräumen &amp; benutzerfreundlich machen<a class="headerlink" href="#35-modell-aufraumen-benutzerfreundlich-machen" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Technische Spalten ausblenden</strong> (<code>KundenNr</code>, <code>ProduktNr</code>): Rechtsklick → <em>Im
+  Bericht ausblenden</em>.</li>
+<li><strong>Sprechende Namen</strong> (<code>Source.Name</code> → <code>Region</code>).</li>
+<li><strong>Formatierung &amp; Standardaggregation</strong> (Umsatz als € , Rabatt als %).</li>
+<li><strong>Datenkategorien</strong> (<code>Ort</code>/<code>PLZ</code>/<code>Land</code> als <strong>Geo</strong>) für spätere Karten.</li>
+<li><strong>Hierarchien</strong> (<code>Jahr ▸ Quartal ▸ Monat</code>; <code>Land ▸ Ort</code>).</li>
+<li><strong>Anzeigeordner</strong> für viele Kennzahlen.</li>
+</ul>
+<div class="admonition merksatz">
+<p class="admonition-title">Merksatz</p>
+<p>Modellieren heißt auch <strong>aufräumen</strong>. Was der Berichtsbauer nicht sehen muss,
+blendet man aus – ein leerer Schreibtisch arbeitet schneller.</p>
+</div>
+<h2 id="36-kennzahlen-berechnete-spalte-vs-measure-kurzer-dax-teil">3.6 Kennzahlen: berechnete Spalte vs. Measure (kurzer DAX-Teil)<a class="headerlink" href="#36-kennzahlen-berechnete-spalte-vs-measure-kurzer-dax-teil" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Nur das Minimum</p>
+<p>Hier nur, was für ein Plan-Ist-Modell nötig ist. DAX in der Tiefe ist Stoff einer
+eigenen Aufbau-Schulung.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Berechnete Spalte</strong></th>
+<th><strong>Measure</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wann berechnet</td>
+<td>beim <strong>Aktualisieren</strong>, je Zeile</td>
+<td>beim <strong>Anzeigen</strong>, je Filterkontext</td>
+</tr>
+<tr>
+<td>Gespeichert?</td>
+<td>ja (kostet Speicher)</td>
+<td>nein (rechnet on the fly)</td>
+</tr>
+<tr>
+<td>Gut für</td>
+<td>zeilenfeste Eigenschaften</td>
+<td><strong>Aggregationen</strong> (Umsatz, DB, Anzahl)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition merksatz">
+<p class="admonition-title">Merksatz</p>
+<p>Aggregierst du (Summe, Schnitt, Anzahl) → <strong>Measure</strong>. Beschreibst du eine einzelne
+Zeile → berechnete Spalte. <strong>Im Zweifel Measure.</strong></p>
+</div>
+<p><strong>Die zwei Kontexte kurz:</strong> <strong>Zeilenkontext</strong> = „aktuelle Zeile" (berechnete Spalte);
+<strong>Filterkontext</strong> = die Filter aus Visual/Slicer/Überschrift (Measure). Klick auf
+„Österreich" → das Measure rechnet automatisch nur mit AT-Zeilen.</p>
+<div class="admonition merksatz">
+<p class="admonition-title">Merksatz</p>
+<p>Ein Measure rechnet immer <strong>„im aktuellen Filter"</strong>. Dieselbe Formel liefert je
+Klick eine andere Zahl – das ist das Schöne daran, nicht das Verwirrende.</p>
+</div>
+<h3 id="gemeinsam-velora-die-kern-measures">Gemeinsam (Velora): die Kern-Measures<a class="headerlink" href="#gemeinsam-velora-die-kern-measures" title="Permanent link">&para;</a></h3>
+<div class="admonition gemeinsam">
+<p class="admonition-title">Mitmachen am Rechner</p>
+<p>Legen Sie eine leere Tabelle <code>_Kennzahlen</code> an (dort sammeln wir alle Measures) und
+tippen Sie die folgenden Formeln gemeinsam mit ein.</p>
+</div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>Umsatz = SUMX ( Bestellungen, Bestellungen[Menge] * Bestellungen[Einzelpreis] * (1 - Bestellungen[Rabatt]) )
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>Einkaufswert = SUMX ( Bestellungen, Bestellungen[Menge] * RELATED ( Produkte[Einkaufspreis] ) )
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>Deckungsbeitrag = [Umsatz] - [Einkaufswert]
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="nf">DB</span><span class="o">-</span>Marge % = DIVIDE ( [Deckungsbeitrag], [Umsatz] )
+</code></pre></div></td></tr></table></div>
+<ul>
+<li><code>SUMX</code> ist ein <strong>Iterator</strong> – läuft zeilenweise über die Bestellungen und summiert.</li>
+<li><code>RELATED</code> holt den Einkaufspreis über die <strong>Beziehung</strong> aus <code>Produkte</code> – der Lohn
+  fürs Sternschema.</li>
+<li><code>DIVIDE</code> teilt <strong>gefahrlos</strong> (kein Fehler bei Division durch 0).</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>Planumsatz = SUM ( Umsatzplan[Planumsatz] )
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>Abweichung = [Umsatz] - [Planumsatz]
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>Zielerreichung % = DIVIDE ( [Umsatz], [Planumsatz] )
+</code></pre></div></td></tr></table></div>
+<div class="admonition merksatz">
+<p class="admonition-title">Merksatz</p>
+<p>Schreibe <strong>explizite</strong> Measures (<code>Umsatz = …</code>) statt eine Zahlenspalte ins Visual
+zu ziehen. Explizite Measures sind benannt, wiederverwendbar und an <em>einer</em> Stelle
+pflegbar.</p>
+</div>
+<div class="admonition merksatz">
+<p class="admonition-title">Merksatz</p>
+<p><strong><code>DIVIDE</code> statt „/".</strong> Ein Schrägstrich knallt bei Null, <code>DIVIDE</code> liefert sauber leer.</p>
+</div>
+<p><strong>Time Intelligence – ein Blick:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>Umsatz VJ = CALCULATE ( [Umsatz], SAMEPERIODLASTYEAR ( Datum[Datum] ) )
+</code></pre></div></td></tr></table></div>
+<p><em>(In unserem Ein-Jahres-Datensatz liefert das nichts – es zeigt nur das Prinzip.
+Sobald 2024er Daten dazukommen, rechnet es von allein.)</em></p>
+<div class="admonition profi">
+<p class="admonition-title">Profi-Ausblick: was bei DAX noch kommt</p>
+<p>Reale DAX-Themen, die hier offen bleiben: <code>CALCULATE</code> mit mehreren Filtern,
+<code>USERELATIONSHIP</code> für inaktive Beziehungen, sich gegenseitig aufrufende Measures
+und das Tücken-Thema <strong>Filterkontext vs. Kontextübergang</strong>. Eine eigene
+Aufbau-Schulung wert.</p>
+</div>
+<h2 id="37-haufige-modellierungsprobleme-elegante-losungen">3.7 Häufige Modellierungsprobleme &amp; elegante Lösungen<a class="headerlink" href="#37-haufige-modellierungsprobleme-elegante-losungen" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Symptom</th>
+<th>Elegante Lösung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mehrere Faktentabellen</strong> (Ist + Plan)</td>
+<td>„Wie verbinde ich beide?"</td>
+<td><strong>Konforme Dimensionen</strong>: beide an <em>dieselbe</em> <code>Datum</code>-/<code>Produkt</code>-Dimension</td>
+</tr>
+<tr>
+<td><strong>n:m-Beziehung</strong></td>
+<td>lässt sich nicht als 1:n anlegen</td>
+<td><strong>Brückentabelle</strong> mit eindeutigen Schlüsseln</td>
+</tr>
+<tr>
+<td><strong>Rollenspielende Dimension</strong> (Bestell-/Lieferdatum)</td>
+<td>nur ein Datum filtert</td>
+<td>zweite Beziehung <strong>inaktiv</strong> + <code>USERELATIONSHIP</code></td>
+</tr>
+<tr>
+<td><strong>Mehrdeutige Pfade</strong></td>
+<td>„ambiguous"-Warnung</td>
+<td>bidirektionale Filter vermeiden, sauberer Stern</td>
+</tr>
+<tr>
+<td><strong>Fehlende Schlüssel</strong> (null ProduktNr)</td>
+<td>Umsatz „ohne Produkt" verschwindet</td>
+<td><strong>„Unbekannt"-Zeile</strong> in der Dimension, <code>null</code> darauf mappen</td>
+</tr>
+<tr>
+<td><strong>Modell zu groß/langsam</strong></td>
+<td>Datei riesig, Refresh träge</td>
+<td>unnötige Spalten raus, <strong>Kardinalität senken</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition merksatz">
+<p class="admonition-title">Merksatz</p>
+<p>Plan und Ist reden <strong>nicht direkt</strong> miteinander – sie reden über <strong>gemeinsame
+Dimensionen</strong> (Datum, Produkt). Das ist die „konforme Dimension".</p>
+</div>
+<div class="admonition profi">
+<p class="admonition-title">Profi-Ausblick: VertiPaq &amp; Kardinalität</p>
+<p>Power BI komprimiert spaltenweise (VertiPaq). Die <strong>Anzahl unterschiedlicher Werte</strong>
+einer Spalte (Kardinalität) ist der größte Hebel: eine <code>Zeitstempel</code>-Spalte mit
+Millisekunden ist ein Speicherfresser; auf reines Datum gekürzt schrumpft das Modell
+drastisch. <strong>Schmal schlägt breit, wenige Werte schlagen viele.</strong></p>
+</div>
+<h2 id="38-qualitatssicherung-dokumentation">3.8 Qualitätssicherung &amp; Dokumentation<a class="headerlink" href="#38-qualitatssicherung-dokumentation" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Plausibilität:</strong> stimmt die Umsatzsumme grob mit einer Excel-Gegenrechnung?</li>
+<li><strong>Datenqualität in Power Query:</strong> <em>Ansicht → Spaltenqualität / -verteilung / -profil</em>.</li>
+<li><strong>Beziehungen prüfen:</strong> geht von <strong>jeder</strong> Dimension <em>ein</em> Pfeil in die Fakten? Gibt
+  es unverbundene Inseln?</li>
+<li><strong>Annahmen dokumentieren</strong> (leerer Rabatt = 0 %, fehlende ProduktNr = Unbekannt).</li>
+</ul>
+<div class="admonition merksatz">
+<p class="admonition-title">Merksatz</p>
+<p>Ein Modell ist erst fertig, wenn ein <strong>Kollege es ohne Sie versteht</strong>. Annahmen,
+die nur im Kopf stehen, sind nicht dokumentiert.</p>
+</div>
+<hr />
+<h2 id="ubungen"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.93l-3.75-3.75zm19.61 1.11-4.25 4.25-5.2-5.2 1.77-1.77 1 1 2.47-2.48 1.42 1.42L18.36 17l1.06 1 1.42-1.4zm-16-7.53L1.39 5.64l4.25-4.25L7.4 3.16 4.93 5.64 6 6.7l2.46-2.48 1.42 1.42-1.42 1.41 1 1zM20.71 7c.39-.39.39-1 0-1.41l-2.34-2.3c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75z"/></svg></span> Übungen<a class="headerlink" href="#ubungen" title="Permanent link">&para;</a></h2>
+<details class="question" open="open">
+<summary>🌶🌶 Bürotech-Sternschema &amp; Kalender</summary>
+<p>Bauen Sie aus den bereinigten Bürotech-Tabellen ein <strong>Sternschema</strong>:</p>
+<ol>
+<li>Beziehungen <code>Auftraege[ArtikelNr] → Artikel[ArtikelNr]</code> und
+   <code>Auftraege[KundenNr] → Kunden[KundenNr]</code> anlegen (1:n, <strong>einfach gerichtet</strong>).</li>
+<li>Eine <strong>Datumstabelle</strong> (2023) erzeugen, <strong>als Datumstabelle markieren</strong>,
+   <code>Monatsname</code> <strong>nach Monatsnummer sortieren</strong>, mit <code>Auftraege[Datum]</code> verbinden.</li>
+<li>Den entpivotierten Plan über <strong>Warengruppe + Monat</strong> auswertbar machen
+   (Monat-Text <code>Jan→1 …</code> auf eine Monatsnummer mappen).</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Prüfen Sie in der Modellansicht: Geht von <strong>jeder</strong> Dimension genau <strong>ein</strong> Pfeil
+in die Faktentabelle? Ohne „Als Datumstabelle markieren" funktioniert später keine
+saubere Zeitrechnung.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<ul>
+<li>Beziehungen per Drag&Drop; Kardinalität <strong>1:n</strong>, Richtung <strong>einfach</strong>.</li>
+<li>Datumstabelle: <code>CALENDARAUTO()</code> <strong>oder</strong> in Power Query via <code>List.Dates</code>.
+  Dann <strong>Tabellentools → Als Datumstabelle markieren</strong> und
+  <strong>Spaltentools → Nach Spalte sortieren → Monatsnummer</strong>.</li>
+<li>Plan: bedingte/Mapping-Spalte <code>Monat → Monatsnummer</code>, dann ist „Plan vs. Ist je
+  Monat" möglich (Plan auf Monats-, Aufträge auf Tagesebene – Treffpunkt ist der Monat).</li>
+</ul>
+</details>
+</details>
+<details class="question" open="open">
+<summary>🌶🌶🌶 Bürotech-Kennzahlen &amp; „Unbekannt"-Zeile</summary>
+<p>Legen Sie die <strong>Kern-Measures</strong> an und sichern Sie den Umsatz der Zeile mit
+fehlender ArtikelNr:</p>
+<ol>
+<li><code>Umsatz</code>, <code>Einkaufswert</code> (über <code>RELATED</code> aus <code>Artikel</code>), <code>Deckungsbeitrag</code>,
+   <code>DB-Marge %</code>.</li>
+<li><code>Planumsatz</code>, <code>Abweichung</code>, <code>Zielerreichung %</code>.</li>
+<li><strong>Profi:</strong> Ergänzen Sie in <code>Artikel</code> eine <strong>„Unbekannt"-Zeile</strong> und mappen Sie
+   die Auftragszeile mit fehlender ArtikelNr darauf, damit ihr Umsatz <strong>nicht
+   verloren</strong> geht.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Sammeln Sie Measures in einer eigenen Tabelle <code>_Kennzahlen</code>. Nutzen Sie <code>DIVIDE</code>
+statt „/", damit eine Division durch 0 nicht knallt. Die „Unbekannt"-Zeile hängen
+Sie per <strong>Anfügen</strong> an die Dimension.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span>
+<span class="normal"><a href="#__codelineno-5-5">5</a></span>
+<span class="normal"><a href="#__codelineno-5-6">6</a></span>
+<span class="normal"><a href="#__codelineno-5-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>Umsatz = SUMX ( Auftraege, Auftraege[Menge] * Auftraege[Listenpreis] * (1 - Auftraege[Rabatt]) )
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>Einkaufswert = SUMX ( Auftraege, Auftraege[Menge] * RELATED ( Artikel[Einkaufspreis] ) )
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>Deckungsbeitrag = [Umsatz] - [Einkaufswert]
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="nf">DB</span><span class="o">-</span>Marge % = DIVIDE ( [Deckungsbeitrag], [Umsatz] )
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>Planumsatz = SUM ( Umsatzplan[Planumsatz] )
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a>Abweichung = [Umsatz] - [Planumsatz]
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a>Zielerreichung % = DIVIDE ( [Umsatz], [Planumsatz] )
+</code></pre></div></td></tr></table></div>
+<p><strong>„Unbekannt"-Zeile:</strong> in <code>Artikel</code> eine Zeile
+<code>ArtikelNr = "Unbekannt"</code>, <code>Warengruppe = "Unbekannt"</code> anhängen und in <code>Auftraege</code>
+die leere <code>ArtikelNr</code> durch <code>"Unbekannt"</code> ersetzen. Jetzt greift der Join und der
+Umsatz bleibt sichtbar.</p>
+</details>
+</details>
+<hr />
+<div class="admonition abstract">
+<p class="admonition-title">Wiederholung Kapitel 3</p>
+<ul>
+<li><strong>Sternschema:</strong> Fakten (Zahlen) zentral, Dimensionen (Worte) außen.</li>
+<li>Beziehungen <strong>1:n, einfach gerichtet</strong>; bidirektional nur mit Grund.</li>
+<li><strong>Datumstabelle</strong>: erzeugen → <strong>markieren</strong> → Monat <strong>nach Nummer sortieren</strong> → verbinden.</li>
+<li><strong>Measures</strong> für Aggregationen; <code>SUMX</code>, <code>RELATED</code>, <code>DIVIDE</code>, <code>CALCULATE</code> als Vokabular.</li>
+<li>Plan + Ist über <strong>konforme Dimensionen</strong>, nie direkt.</li>
+<li><strong>Aufräumen, prüfen, dokumentieren</strong> gehört zum Modell.</li>
+</ul>
+</div>
+<details class="question">
+<summary>Verständnisfragen zu Kapitel 3</summary>
+<ol>
+<li>In einer 1:n-Beziehung – welche Tabelle ist „1", welche „n"?</li>
+<li>„Vorjahr" liefert Quatsch. Welche <strong>zwei</strong> Modellvoraussetzungen prüfen Sie zuerst?</li>
+<li>Warum sortieren Monatsnamen ohne Zutun falsch – und wie behebt man es?</li>
+<li>Wann <strong>Measure</strong>, wann <strong>berechnete Spalte</strong>?</li>
+<li>Wie verbindet man <strong>Plan-</strong> und <strong>Ist-Tabelle</strong> sauber?</li>
+</ol>
+<details class="success">
+<summary>Lösungen</summary>
+<ol>
+<li>Die <strong>Dimension</strong> ist „1", die <strong>Faktentabelle</strong> „n".</li>
+<li>(a) Ist die <strong>Datumstabelle als Datumstabelle markiert</strong>? (b) Besteht eine
+   <strong>aktive Beziehung</strong> zwischen Faktdatum und Datumstabelle?</li>
+<li>Sie werden als <strong>Text alphabetisch</strong> sortiert. Lösung: <strong>Nach Spalte
+   sortieren → Monatsnummer</strong>.</li>
+<li>Measure für <strong>Aggregationen</strong> (rechnet im Filterkontext, kein Speicher);
+   berechnete Spalte für <strong>zeilenfeste</strong> Eigenschaften.</li>
+<li>Über <strong>konforme Dimensionen</strong> (beide an dieselbe <code>Datum</code>-/<code>Produkt</code>-Dimension).</li>
+</ol>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Fußzeile" >
+        
+          
+          <a href="../02-transformieren/" class="md-footer__link md-footer__link--prev" aria-label="Zurück: 2 · Daten transformieren">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Zurück
+              </span>
+              <div class="md-ellipsis">
+                2 · Daten transformieren
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../04-abschluss/" class="md-footer__link md-footer__link--next" aria-label="Weiter: 4 · Abschluss &amp; Checkliste">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Weiter
+              </span>
+              <div class="md-ellipsis">
+                4 · Abschluss & Checkliste
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.kununu.com/de/qualidy" target="_blank" rel="noopener" title="www.kununu.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M311 86.3c12.3-12.7 12-32.9-.7-45.2s-32.9-12-45.2.7C143.4 167.2 76.4 236.3 64 249V64c0-17.7-14.3-32-32-32S0 46.3 0 64v384c0 17.7 14.3 32 32 32s32-14.3 32-32V341l64.7-66.7 133 192c10.1 14.5 30 18.1 44.5 8.1s18.1-30 8.1-44.5L174.1 227.4z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.instant", "navigation.instant.progress", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
