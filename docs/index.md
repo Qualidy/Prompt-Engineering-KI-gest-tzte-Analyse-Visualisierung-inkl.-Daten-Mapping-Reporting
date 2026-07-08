@@ -40,6 +40,8 @@ an zwei durchgängigen Beispielen.
 - [:material-chart-box: **5 · Visualisierung**](content/05-visualisierung.md)
 - [:material-brain: **6 · Machine Learning & KI**](content/06-machine-learning-ki.md)
 - [:material-robot-happy: **7 · Copilot & Datenanalyse**](content/07-copilot.md)
+- [:material-language-python: **8 · ML in Excel & Power BI**](content/08-ml-excel-powerbi.md)
+- [:material-cog-outline: **9 · AutoML-Plattformen (Dataiku)**](content/09-automl-dataiku.md)
 
 </div>
 

@@ -1,0 +1,28 @@
+title: Von Dataiku zu Bürotech-Bericht
+difficulty: 2
+question: |
+  1. **Flow übersetzen:** Bürotech will die **Abwanderung** von Kunden vorhersagen. Skizzieren
+     Sie den Dataiku-Flow als Kette aus **Datasets** und **Recipes** (Rohdaten → sauber →
+     Modell → Vorhersage).
+  2. **Einordnen:** Ist diese Abwanderungs-Vorhersage *supervised* oder *unsupervised*,
+     Regression oder Klassifikation? (→ Kapitel 6)
+  3. **Übergabe:** Der Vertrieb will die Risikoliste **jeden Montag** in Power BI sehen.
+     Wählen Sie **CSV-Export** oder **Datenbank** – und begründen Sie.
+  4. **Werkzeugwahl:** Für „einmal den Umsatztrend je Warengruppe zeigen" – Dataiku-Plattform
+     oder direkt Power BI? Warum?
+  5. **Profi-Frage:** Nennen Sie eine Fachfrage, die **AutoML dem Menschen nicht abnimmt**.
+tip: |
+  **Datasets sind Substantive, Recipes sind Verben.** Für einen *wiederkehrenden* Bericht
+  zählt, dass sich die Quelle **automatisch** erneuert – nicht, wie schnell sie einmalig da ist.
+solution: |
+  1. `Aufträge`/`Kunden` (Datasets) → **Prepare-/Join-Recipe** → `sauber` (Dataset) →
+     **Train-Recipe (Lab/AutoML)** → `Modell` → **Scoring-Recipe** → `Kunden mit
+     Abwanderungs-Wahrscheinlichkeit` (Dataset).
+  2. **Supervised / Klassifikation** – es gibt ein bekanntes Label (abgewandert ja/nein), die
+     Zielgröße ist eine **Kategorie**, keine Zahl.
+  3. **Datenbank** (bzw. Data Warehouse): Ein **Scenario** rechnet den Flow automatisch, Power BI
+     aktualisiert daraus – ein CSV-Export müsste man jeden Montag von Hand neu erzeugen.
+  4. **Direkt Power BI** – eine einmalige Trend-/Aggregatanzeige braucht keine Plattform;
+     die Trendlinie/Prognose aus Kapitel 8 genügt (einfachstes Werkzeug zuerst).
+  5. z. B. die **saubere Definition der Zielgröße**, das Vermeiden von **Data Leakage**, oder
+     ob das Modell **fair/erklärbar** genug für eine Geschäftsentscheidung ist.

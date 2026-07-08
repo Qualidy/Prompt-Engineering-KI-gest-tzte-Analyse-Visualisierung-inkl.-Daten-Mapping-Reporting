@@ -14,6 +14,8 @@ nav:
       - 5 · Visualisierung: content/05-visualisierung.md
       - 6 · Machine Learning & KI: content/06-machine-learning-ki.md
       - 7 · Copilot & Datenanalyse: content/07-copilot.md
+      - 8 · ML in Excel & Power BI: content/08-ml-excel-powerbi.md
+      - 9 · AutoML-Plattformen (Dataiku): content/09-automl-dataiku.md
 
 theme:
   name: material

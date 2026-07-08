@@ -1,0 +1,28 @@
+title: Regression an Bürotech rechnen
+difficulty: 2
+question: |
+  1. **Excel-Formeln:** Legen Sie `Menge` und `Umsatz` je Auftrag in zwei Spalten. Bilden
+     Sie `=STEIGUNG(Umsatz;Menge)`, `=ACHSENABSCHNITT(Umsatz;Menge)` und
+     `=BESTIMMTHEITSMASS(Umsatz;Menge)`. Was sagt das R²?
+  2. **Trendlinie:** Zeichnen Sie ein Punktdiagramm derselben Daten und blenden Sie eine
+     lineare **Trendlinie mit Formel & R²** ein – stimmt die Steigung mit Aufgabe 1 überein?
+  3. **Vorhersage:** Schätzen Sie mit `=PROGNOSE.LINEAR(50; Umsatz; Menge)` den Umsatz für
+     einen Auftrag über 50 Stück. Ist der Wert plausibel?
+  4. **Power BI:** Analysieren Sie `[Umsatz]` mit **Schlüsseleinflussfaktoren** nach
+     `Warengruppe` und `Menge`. Nennt die KI dieselbe Größe als Treiber wie Ihre Regression?
+  5. **Profi-Frage:** Nennen Sie einen Grund, warum ein hohes R² hier trotzdem in die Irre
+     führen kann (Stichworte: Ausreißer, Rabatte, Kausalität).
+tip: |
+  `STEIGUNG` = SLOPE, `BESTIMMTHEITSMASS` = R² (RSQ). Die Trendlinie im Diagramm muss
+  **dieselbe** Steigung liefern wie die Formel – sonst stimmt der Zellbezug nicht. R² zeigt
+  nur die **Passung**, nicht ob der Zusammenhang echt ist (Kapitel 6).
+solution: |
+  1. `=STEIGUNG(Umsatz;Menge)` ≈ mittlerer Preis pro Stück; **R²** nahe 1 = Gerade passt gut,
+     nahe 0 = kein linearer Zusammenhang. Rabatte lockern den Zusammenhang → R² sinkt.
+  2. Die **Trendlinie zeigt dieselbe Steigung** – sie rechnet dieselbe Regression, nur grafisch.
+  3. `=PROGNOSE.LINEAR(50; Umsatz; Menge)` (FORECAST.LINEAR) setzt 50 in die Gerade ein.
+     Plausibel nur, wenn 50 im **Bereich der Daten** liegt – Extrapolation weit darüber ist riskant.
+  4. **Schlüsseleinflussfaktoren** auf `[Umsatz]`: In der Regel treibt `Menge` den Umsatz –
+     die KI bestätigt die Regression ohne eine Zeile Code.
+  5. Ein einzelner **Großauftrag/Ausreißer** oder systematische **Rabatte** können die Gerade
+     verzerren; und selbst ein perfektes R² beweist **keine Kausalität** (Kapitel 6).
